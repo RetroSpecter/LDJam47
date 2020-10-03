@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
     public float acclerationTimeGrounded = 0.1f;
 
     private Interactable objectOfConcentration;
+    private const KeyCode interact = KeyCode.Space;
 
     void Start() {
         Instance = this;
@@ -47,6 +48,11 @@ public class Player : MonoBehaviour {
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        // Check interaction
+        if (Input.GetKeyDown(interact) && this.objectOfConcentration != null) {
+            this.objectOfConcentration.Interact();
+        }
     }
 
     void checkIfGrounded() {
