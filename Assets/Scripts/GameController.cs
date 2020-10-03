@@ -33,4 +33,12 @@ public class GameController : MonoBehaviour {
         this.currArea = (this.currArea % areas.Count) + 1;
         this.GetCurrArea().PlayerEntered();
     }
+
+    public void AddEvent(string e) {
+        events.Add(e);
+    }
+
+    public bool CheckForEvent(string e) {
+        return events.Contains(e);
+    }
 }
