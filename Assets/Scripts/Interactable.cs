@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour {
 
     protected void OnTriggerExit2D(Collider2D collision) {
         // Register that the player is no longer concentrating on *this* Interactable
-        // TODO: Player.Instance.StopConcentrating(this);
+        Player.Instance.StopConcentrating(this);
     }
 
 
