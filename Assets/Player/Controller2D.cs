@@ -24,6 +24,7 @@ public class Controller2D : MonoBehaviour {
 
     public Vector2 dirOfGravity;
 
+
     void Awake()
     {
         collider = GetComponent<BoxCollider2D>();
@@ -50,6 +51,7 @@ public class Controller2D : MonoBehaviour {
             {
                 HorizontalTriggers(velocity);
                 HorizontalCollisions(ref velocity);
+                print(velocity.x);
             }
 
             if (velocity.y != 0)
@@ -58,6 +60,7 @@ public class Controller2D : MonoBehaviour {
                 VerticalCollisions(ref velocity);
             }
         }
+
         CalculateGravity();
         transform.Translate(velocity);
     }

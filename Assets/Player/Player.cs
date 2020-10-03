@@ -22,10 +22,13 @@ public class Player : MonoBehaviour {
     public float accelerationTimeAirborn = 0.2f;
     public float acclerationTimeGrounded = 0.1f;
 
+    private SpriteAnimator animator;
+
     void Start() {
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJump = Mathf.Abs(gravity) * timeToJumpApex;
+        animator = GetComponentInChildren<SpriteAnimator>();
     }
 
     void Update() {
@@ -68,6 +71,7 @@ public class Player : MonoBehaviour {
 
         float targetVelocityX = input.x * targetSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? acclerationTimeGrounded : accelerationTimeAirborn);
+        animator.SpriteWalk(velocity.x);
 
     }
 
