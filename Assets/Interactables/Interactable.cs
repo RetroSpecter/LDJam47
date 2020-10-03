@@ -13,16 +13,19 @@ public class Interactable : MonoBehaviour {
 
 
     protected void OnTriggerEnter2D(Collider2D collision) {
-        // Register that the player is concentrating on *this* Interactable
-        if (this.CanInteract()) {
-            Player.Instance.Concentrate(this);
+        if (collision.CompareTag("Player")) {
+            // Register that the player is concentrating on *this* Interactable
+            if (this.CanInteract()) {
+                Player.Instance.Concentrate(this);
+            }
         }
-
     }
 
     protected void OnTriggerExit2D(Collider2D collision) {
-        // Register that the player is no longer concentrating on *this* Interactable
-        Player.Instance.StopConcentrating(this);
+        if (collision.CompareTag("Player")) {
+            // Register that the player is no longer concentrating on *this* Interactable
+            Player.Instance.StopConcentrating(this);
+        }
     }
 
 
@@ -54,11 +57,14 @@ public class Interactable : MonoBehaviour {
     // You're just enabling that different NPC and flagging this one to be disabled when
     //  the player exits the scene
     public void MoveAreasEvent(GameObject[] objectsInDifferentArea, Area currArea) {
+        
         // enable the given objects in the other area
         foreach (GameObject go in objectsInDifferentArea) {
+            Debug.Log("Setting new object to active");
             go.SetActive(true);
         }
 
+        Debug.Log("Setting object to inactive in area " + currArea.areaNum);
         // Queue this boy to be disabled from this area
         currArea.AddToLeavingQueue(this.gameObject);
     }

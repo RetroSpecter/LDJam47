@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     public float acclerationTimeGrounded = 0.1f;
 
     private Interactable objectOfConcentration;
-    private const KeyCode interact = KeyCode.Space;
+    private const KeyCode interact = KeyCode.Z;
 
     void Start() {
         Instance = this;
