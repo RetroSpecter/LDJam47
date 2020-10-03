@@ -48,6 +48,7 @@ public class Area : MonoBehaviour {
 
     // Given an interactable object,
     public void AddToLeavingQueue(GameObject go) {
+        Debug.Log("registered an object to dissapear on leaving scene");
         this.queuedForLeaving.Add(go);
     }
 }

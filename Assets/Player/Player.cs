@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent (typeof(Controller2D))]
 public class Player : MonoBehaviour {
     Controller2D controller;
+    public static Player Instance;
 
     [HideInInspector] public bool canJump;
     public float maxJumpHeight = 4;
@@ -22,9 +23,17 @@ public class Player : MonoBehaviour {
     public float accelerationTimeAirborn = 0.2f;
     public float acclerationTimeGrounded = 0.1f;
 
+
     private SpriteAnimator animator;
 
+    private Interactable objectOfConcentration;
+    private const KeyCode interact = KeyCode.Z;
+
+    public Transform headPosition;
+    private Item heldItem;
+
     void Start() {
+        Instance = this;
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJump = Mathf.Abs(gravity) * timeToJumpApex;
@@ -44,6 +53,16 @@ public class Player : MonoBehaviour {
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        // Check interaction
+        if (Input.GetKeyDown(interact)) {
+            if (this.objectOfConcentration != null) {
+                this.objectOfConcentration.Interact();
+            } else if (heldItem != null) {
+                Item item = this.RemoveItem();
+                item.transform.position = this.transform.position;
+            }
+        }
     }
 
     void checkIfGrounded() {
@@ -94,5 +113,58 @@ public class Player : MonoBehaviour {
 
     public bool grounded() {
         return canJump;
+    }
+
+
+    // Interaction Management
+
+    // Set another object as the one you want to interact with
+    public void Concentrate(Interactable obj) {
+        if (this.objectOfConcentration == null) {
+            this.objectOfConcentration = obj;
+        }
+    }
+
+    // Stop thinking about another object. think about waifus instead.
+    public void StopConcentrating(Interactable obj) {
+        if (this.objectOfConcentration != null
+            && this.objectOfConcentration.interactableID == obj.interactableID) {
+            this.objectOfConcentration = null;
+        }
+    }
+
+
+    // Item Management
+
+    // Pick up an item. If you already have an item, replace it
+    public void PickUpItem(Item item) {
+        if (this.heldItem != null) {
+            // Remove item from head and place it on the ground. Also concentrate on it.
+            this.Concentrate(this.heldItem);
+            this.RemoveItem().transform.position = item.transform.position;
+        }
+
+        this.heldItem = item;
+        this.heldItem.transform.position = this.headPosition.position;
+        this.heldItem.transform.SetParent(this.headPosition);
+
+        // Stop concentrating on the item you just picked up
+        this.StopConcentrating(item);
+    }
+
+    public string GetHeldItemID() {
+        if (this.heldItem != null)
+            return this.heldItem.interactableID;
+        return "";
+    }
+
+    // removes the item from your head and returns it
+    public Item RemoveItem() {
+        this.heldItem.transform.SetParent(null);
+
+        var item = this.heldItem;
+        this.heldItem = null;
+
+        return item;
     }
 }
