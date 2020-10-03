@@ -17,8 +17,6 @@ public class Player : MonoBehaviour {
 
     public bool canMove = true;
     public float moveSpeed = 6;
-    public float holdingSpeed = 3;
-    public float shootingSpeed = 6;
     float velocityXSmoothing;
     Vector3 velocity;
 
@@ -76,7 +74,7 @@ public class Player : MonoBehaviour {
     void movement(Vector2 input) {
 
         float targetSpeed =  moveSpeed;
-        targetSpeed = Input.GetButton("Fire2") ? shootingSpeed : targetSpeed;
+
 
         float targetVelocityX = input.x * targetSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? acclerationTimeGrounded : accelerationTimeAirborn);
