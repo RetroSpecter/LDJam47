@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 4450399603409121897}
   - component: {fileID: 1641081848}
   - component: {fileID: 1641081846}
-  - component: {fileID: 7808173340016831688}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -179,32 +178,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7808173340016831688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4450399603409121903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee69393b5d2654f6185752dd9132eb36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnExitRoom
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4450399603424175310
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ public class Boundary : MonoBehaviour {
             Debug.Log(this.name + " -> " + col.name);
             triggerHit.Invoke();
 
-
             // State stuff to enter the next area
             GameController.Instance.ProgressToNextArea();
         }
