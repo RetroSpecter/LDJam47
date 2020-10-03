@@ -9,8 +9,13 @@ public class Boundary : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.TryGetComponent(out Player p)) {
+            // Camera stuff to enter next area
             Debug.Log(this.name + " -> " + col.name);
             triggerHit.Invoke();
+
+
+            // State stuff to enter the next area
+            GameController.Instance.ProgressToNextArea();
         }
     }
 }
