@@ -15,7 +15,12 @@ PrefabInstance:
     - target: {fileID: 1459562574109069003, guid: 017c404e22a4d465d8235857150540af,
         type: 3}
       propertyPath: m_Name
-      value: Bread
+      value: Bread Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459562574109069003, guid: 017c404e22a4d465d8235857150540af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1459562574109069014, guid: 017c404e22a4d465d8235857150540af,
         type: 3}
@@ -71,6 +76,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459562574109069015, guid: 017c404e22a4d465d8235857150540af,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459562574109069015, guid: 017c404e22a4d465d8235857150540af,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.20784315
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459562574109069015, guid: 017c404e22a4d465d8235857150540af,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.68235296
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017c404e22a4d465d8235857150540af, type: 3}

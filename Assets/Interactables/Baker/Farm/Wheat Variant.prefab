@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 1459562574109069003, guid: 017c404e22a4d465d8235857150540af,
         type: 3}
       propertyPath: m_Name
-      value: Wheat
+      value: Wheat Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1459562574109069003, guid: 017c404e22a4d465d8235857150540af,
         type: 3}
@@ -76,6 +76,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459562574109069015, guid: 017c404e22a4d465d8235857150540af,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459562574109069015, guid: 017c404e22a4d465d8235857150540af,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459562574109069015, guid: 017c404e22a4d465d8235857150540af,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.007843138
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017c404e22a4d465d8235857150540af, type: 3}

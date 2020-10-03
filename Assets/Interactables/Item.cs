@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Item : Interactable {
 
-    protected override bool CanInteract() {
-        return true;
-    }
-
     public override void Interact() {
         Debug.Log("You picked up an item!");
 
@@ -25,6 +21,6 @@ public class Item : Interactable {
 
         // TODO: add juice
 
-        // TODO: play quest completed sound
+        // TODO: play item get sound
     }
 }
