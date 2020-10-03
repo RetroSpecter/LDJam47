@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent (typeof(Controller2D))]
 public class Player : MonoBehaviour {
     Controller2D controller;
+    public static Player Instance;
 
     [HideInInspector] public bool canJump;
     public float maxJumpHeight = 4;
@@ -24,7 +25,10 @@ public class Player : MonoBehaviour {
     public float accelerationTimeAirborn = 0.2f;
     public float acclerationTimeGrounded = 0.1f;
 
+    private Interactable objectOfConcentration;
+
     void Start() {
+        Instance = this;
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJump = Mathf.Abs(gravity) * timeToJumpApex;
@@ -92,5 +96,18 @@ public class Player : MonoBehaviour {
 
     public bool grounded() {
         return canJump;
+    }
+
+    public void Concentrate(Interactable obj) {
+        if (this.objectOfConcentration == null) {
+            this.objectOfConcentration = obj;
+        }
+    }
+
+    public void StopConcentrating(Interactable obj) {
+        if (this.objectOfConcentration != null
+            && this.objectOfConcentration.interactableID == obj.interactableID) {
+            this.objectOfConcentration = null;
+        }
     }
 }

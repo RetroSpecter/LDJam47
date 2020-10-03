@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour {
     protected void OnTriggerEnter2D(Collider2D collision) {
         // Register that the player is concentrating on *this* Interactable
         if (this.CanInteract()) {
-            // TODO: Player.Instance.Concentrate(this);
+            Player.Instance.Concentrate(this);
         }
 
     }
