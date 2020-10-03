@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 
     private SpriteAnimator animator;
 
-    private Interactable objectOfConcentration;
+    public Interactable objectOfConcentration;
     private const KeyCode interact = KeyCode.Z;
 
     public Transform headPosition;
@@ -87,6 +87,9 @@ public class Player : MonoBehaviour {
 
         float targetSpeed =  moveSpeed;
 
+        if (Input.GetKey(KeyCode.Tab)) {
+            targetSpeed *= 3;
+        }
 
         float targetVelocityX = input.x * targetSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? acclerationTimeGrounded : accelerationTimeAirborn);
@@ -150,6 +153,10 @@ public class Player : MonoBehaviour {
 
         // Stop concentrating on the item you just picked up
         this.StopConcentrating(item);
+    }
+
+    public static bool IsHolding(string itemID) {
+        return Instance.GetHeldItemID() == itemID;
     }
 
     public string GetHeldItemID() {
