@@ -83,7 +83,6 @@ public class Controller2D : MonoBehaviour {
         //dirOfGravity = -hit.normal;
 
         transform.rotation = Quaternion.FromToRotation(Vector3.up, -Vector3.Normalize(dirOfGravity));
-
     }
 
     //TODO: note there is aweakness in how i am detecting collisions and triggers. multiple raycasts hitting an object results in it being caleed multiple times
