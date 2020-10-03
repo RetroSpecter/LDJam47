@@ -41,8 +41,47 @@ public class Interactable : MonoBehaviour {
         Debug.Log("You interacted with me!");
     }
 
+
+
+    // Easy call for any quest that takes an item. 
+    protected void TakeItemFromPlayer() {
+        Item i = Player.Instance.RemoveItem();
+        i.transform.parent = this.transform;
+        i.gameObject.SetActive(false);
+    }
+
+    // Why make a quest complete method AND a quest result method?
+    // Well. The quest complete is an enumerator so we can script any kind of animation
+    //  we want and time the appearance of the bread so any sounds don't overlap.
+    //  this way we can be sure things happen in a good order. And so we can
+    //  potentially lock the player's movement for a brief amount of time
+    protected IEnumerator CompleteQuest() {
+        // TODO: Lock player movement for a moment?
+        Player.Instance.StopConcentrating(this);
+        // TODO: Yay animation
+        // TODO: Quest complete sound
+        yield return null;
+
+        QuestResults();
+    }
+
+    // Different things happen when NPC's 
+    protected virtual void QuestResults() {
+        // Nothing
+    }
+
     /// Events
     ///////////
+
+    // Called when an event occurrs that results in this NPC "moving" from one scene to another
+    // In reality, the NPC in one scene is a different object than the NPC in the other
+    // You're just enabling that different NPC and flagging this one to be disabled when
+    //  the player exits the scene
+    // Takes in the object in the next area you're enabling. Assumes the area in which you're disabling this object
+    //  is the current area
+    public void MoveAreasEvent(GameObject objectInDifferentArea) {
+        this.MoveAreasEvent(new GameObject[] { objectInDifferentArea }, GameController.Instance.GetCurrArea());
+    }
 
     // Called when an event occurrs that results in this NPC "moving" from one scene to another
     // In reality, the NPC in one scene is a different object than the NPC in the other

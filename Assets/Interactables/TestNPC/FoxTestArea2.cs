@@ -5,9 +5,10 @@ using UnityEngine;
 public class FoxTestArea2 : Interactable {
 
     public Transform headPosition;
+    private bool holdingItem;
 
     protected override bool CanInteract() {
-        return Player.Instance.GetHeldItemID() == "TestItem";
+        return Player.Instance.GetHeldItemID() == "TestItem" && !holdingItem;
     }
 
     // If the player is concentrating on this interactable, then pressing space will

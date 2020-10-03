@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
 
     public int currArea;
     public Dictionary<int, Area> areas;
-
+    public HashSet<string> events;
 
     // Start is called before the first frame update
     void Awake() {
@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
             Instance = this;
             this.currArea = 1;
             this.areas = new Dictionary<int, Area>();
+            this.events = new HashSet<string>();
         }
     }
 

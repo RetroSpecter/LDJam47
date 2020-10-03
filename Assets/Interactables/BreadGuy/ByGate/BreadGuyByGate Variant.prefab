@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7355310081143353594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8015248091018527756}
+  m_Layer: 0
+  m_Name: GraduationCap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8015248091018527756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355310081143353594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3296727996707549386}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8059973106254334519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872222242458134242}
+  m_Layer: 0
+  m_Name: Gate Key Thinking Bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1872222242458134242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059973106254334519}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3296727996707549386}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9158321131012470061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8830231579815861011}
+  m_Layer: 0
+  m_Name: Teacher Thinking Bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8830231579815861011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158321131012470061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3296727996707549386}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6877495182647650107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8264547094262110189, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_Name
+      value: BreadGuyByGate Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110189, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.333035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.60018855
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.79985857
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -73.767006
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2079752651302295741, guid: 667947a1cf6f04a109e20984d8c0c969, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 667947a1cf6f04a109e20984d8c0c969, type: 3}
+--- !u!4 &3296727996707549386 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8264547094262110193, guid: 667947a1cf6f04a109e20984d8c0c969,
+    type: 3}
+  m_PrefabInstance: {fileID: 6877495182647650107}
+  m_PrefabAsset: {fileID: 0}
