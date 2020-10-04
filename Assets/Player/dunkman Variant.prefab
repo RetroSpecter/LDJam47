@@ -99,6 +99,16 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373166, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 1.6776981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373166, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.2314553
+      objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373167, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_Name

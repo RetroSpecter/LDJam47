@@ -7,13 +7,15 @@ public class DunkmanNPC : Interactable
 {
 
     public bool gotDunked;
-    public GameObject basketball;
+    public GameObject fallenBasketball, holdingBasketball;
 
     private float distFromCenter;
 
     private void Start()
     {
         distFromCenter = transform.position.magnitude;
+        fallenBasketball.SetActive(false);
+        holdingBasketball.SetActive(true);
     }
 
 
@@ -31,11 +33,13 @@ public class DunkmanNPC : Interactable
     //TODO: tweak this so that he always lands on the ground
     IEnumerator dunkEnum() {
         float i = 0;
-        basketball.transform.DOMove(basketball.transform.position - basketball.transform.up * 4, 1).SetEase(Ease.OutBounce);
+        fallenBasketball.SetActive(true);
+        holdingBasketball.SetActive(false);
+        fallenBasketball.transform.DOMove(fallenBasketball.transform.position - fallenBasketball.transform.up * 6, 1).SetEase(Ease.OutBounce);
         transform.DOMove(transform.position - transform.up * 0.5f, 0.2f).SetEase(Ease.InQuad);
         yield return new WaitForSeconds(1);
         transform.DOMove(transform.position.normalized * (distFromCenter - 1), 0.5f).SetEase(Ease.InSine);
-        GetComponent<DunkmanItem>().enabled = false;
+        Destroy(GetComponent<DunkmanItem>());
 
     }
 

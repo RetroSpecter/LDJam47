@@ -33,7 +33,7 @@ public class TeacherByGate : Interactable {
 
     // When baker gets wheat, he makes bread.
     protected override void QuestResults() {
-
+        print("Quest completed");
         // What happens?
     }
 }

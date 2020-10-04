@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TrashMan : Interactable
 {
     private int numberOfChildren;
     public GameObject[] trashBags;
-    public GameObject dumpster;
+    public UnityEvent dumpersterOpenEvent;
+
+
     public Item part;
 
     private void Start()
@@ -45,6 +48,7 @@ public class TrashMan : Interactable
                     bag.SetActive(false);
                 }
 
+                dumpersterOpenEvent.Invoke();
                 part.gameObject.SetActive(true);
             }
 
