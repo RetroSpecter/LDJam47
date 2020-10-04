@@ -28,12 +28,16 @@ public class FishingPond : Interactable {
     public override void Interact() {
         if (!retreivedCoin) {
             retreivedCoin = true;
+            // TODO: replace this with a call to fish this item onto the land
             Item.MakeItemAppear(coin);
         } else if (!retreivedKey) {
             retreivedKey = true;
+            // TODO: replace this with a call to fish this item onto the land
             Item.MakeItemAppear(schoolKey);
         } else {
             retreivedPart = true;
+
+            // TODO: replace this with a call to fish this item onto the land
             Item.MakeItemAppear(shipPiece);
         } 
     }
