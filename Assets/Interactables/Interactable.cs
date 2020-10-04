@@ -55,7 +55,7 @@ public class Interactable : MonoBehaviour {
     //  we want and time the appearance of the bread so any sounds don't overlap.
     //  this way we can be sure things happen in a good order. And so we can
     //  potentially lock the player's movement for a brief amount of time
-    protected IEnumerator CompleteQuest() {
+    protected virtual IEnumerator CompleteQuest() {
         // TODO: Lock player movement for a moment?
         Player.Instance.StopConcentrating(this);
         // TODO: Yay animation
