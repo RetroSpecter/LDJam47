@@ -18,7 +18,7 @@ public class TeacherByGate : Interactable {
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
     protected override bool CanInteract() {
-        return /*GameController.Instance.CheckForEvent("BreadGuyFed") &&*/ !gateUnlocked;
+        return GameController.Instance.CheckForEvent("BreadGuyFed") && !gateUnlocked;
     }
 
     // If the player is concentrating on this interactable, then pressing space will

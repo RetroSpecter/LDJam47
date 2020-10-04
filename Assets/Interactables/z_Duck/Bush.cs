@@ -14,7 +14,8 @@ public class Bush : Interactable
 
     private void Start()
     {
-        duck.gameObject.SetActive(false);
+        if(duck != null)
+            duck.gameObject.SetActive(false);
     }
 
     // Based on the state of the game & the player's inventory, checks if the
