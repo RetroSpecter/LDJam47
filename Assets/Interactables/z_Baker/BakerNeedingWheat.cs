@@ -14,7 +14,7 @@ public class BakerNeedingWheat : Interactable {
     }
 
     public override void Interact() {
-        if (!Player.IsHolding("Wheat")) {
+        if (!Player.IsHolding("Coin")) {
             // TODO: sigh
         } else {
             TakeItemFromPlayer();

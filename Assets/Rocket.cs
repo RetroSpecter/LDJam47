@@ -5,15 +5,12 @@ public class Rocket : Interactable
 {
     public static string rocketReadyEvent = "rocketReady";
 
-    private void Start()
-    {
+    public Transform[] pieces;
+
+    private void Start() {
         GameController.Instance.AddEvent(rocketReadyEvent);
     }
 
-    protected override bool CanInteract()
-    {
-        return true;
-    }
 
     // If the player is concentrating on this interactable, then pressing z will
     //  lead to interaction
@@ -28,5 +25,12 @@ public class Rocket : Interactable
             s.Join(this.transform.DOMove(transform.position + transform.up * 30, 5).SetEase(Ease.InQuint));
             s.Join(cam.transform.DOMove(cam.transform.position + cam.transform.up * 20, 8).SetEase(Ease.InOutQuint));
         }
+    }
+
+    // Given a part, displays it above the rocket
+    public void CollectPart(RocketPart part) {
+        var bleg = pieces[part.partNum];
+        part.transform.position = bleg.position;
+        part.transform.parent = bleg;
     }
 }

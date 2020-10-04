@@ -29,7 +29,7 @@ public class BreadGuyP1 : Interactable {
     // When breadman gets bread, he goes to the school gate.
     protected override void QuestResults() {
         MoveAreasEvent(new GameObject[] { this.breadGuyOutsideGate });
-
+        GameController.Instance.AddEvent("BreadGuyFed");
     }
 
 }

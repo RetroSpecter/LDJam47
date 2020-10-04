@@ -7,6 +7,9 @@ public class Area : MonoBehaviour {
     public int areaNum;
 
     private HashSet<GameObject> queuedForLeaving;
+    private HashSet<EnterAreaEvent> queuedForEntering;
+
+    public delegate void EnterAreaEvent();
 
     public Collider2D enterCollider;
     public Collider2D exitCollider;
@@ -15,6 +18,7 @@ public class Area : MonoBehaviour {
     protected void Start() {
         GameController.Instance.RegisterArea(this.areaNum, this);
         this.queuedForLeaving = new HashSet<GameObject>();
+        this.queuedForEntering = new HashSet<EnterAreaEvent>();
     }
 
     // On the event that the player leaves the area, do the following:
@@ -23,6 +27,7 @@ public class Area : MonoBehaviour {
         foreach (GameObject go in this.queuedForLeaving) {
             go.SetActive(false);
         }
+        queuedForLeaving.Clear();
 
         enterCollider.isTrigger = true;
         exitCollider.isTrigger = false;
@@ -31,6 +36,11 @@ public class Area : MonoBehaviour {
     }
 
     public void PlayerEntered() {
+        foreach (EnterAreaEvent areaEvent in this.queuedForEntering) {
+            areaEvent();
+        }
+        queuedForLeaving.Clear();
+
         CameraRotationManager.instance.RotateCameraTo(this.transform);
         enterCollider.isTrigger = false;
         exitCollider.isTrigger = true;
@@ -50,5 +60,10 @@ public class Area : MonoBehaviour {
     public void AddToLeavingQueue(GameObject go) {
         Debug.Log("registered an object to dissapear on leaving scene");
         this.queuedForLeaving.Add(go);
+    }
+
+    // Given an event method, queues it to be called when you enter an area
+    public void AddToEnteringQueue(EnterAreaEvent areaEvent) {
+        this.queuedForEntering.Add(areaEvent);
     }
 }

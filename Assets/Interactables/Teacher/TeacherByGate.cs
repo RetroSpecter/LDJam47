@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TeacherByGate : Interactable {
 
-    public Item fishingPole;
-    public bool fishingPoleGiven;
+    //public Item fishingPole;
+    //public bool fishingPoleGiven;
     public bool gateUnlocked;
+    public GameObject breadGuyByGate;
 
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
@@ -17,12 +18,7 @@ public class TeacherByGate : Interactable {
     // If the player is concentrating on this interactable, then pressing space will
     //  lead to interaction
     public override void Interact() {
-        if (!fishingPoleGiven) {
-            Item.MakeItemAppear(fishingPole);
-            Player.Instance.StopConcentrating(this);
-            this.fishingPoleGiven = true;
-        } else if (!Player.IsHolding("GateKey")) {
-            Debug.Log("I need help, Jose");
+        if (!Player.IsHolding("GateKey")) {
             Sigh();
         } else {
             TakeItemFromPlayer();
@@ -33,7 +29,9 @@ public class TeacherByGate : Interactable {
 
     // When baker gets wheat, he makes bread.
     protected override void QuestResults() {
-        print("Quest completed");
-        // What happens?
+        GameController.Instance.GetCurrArea().AddToLeavingQueue(this.gameObject);
+        GameController.Instance.GetCurrArea().AddToLeavingQueue(this.breadGuyByGate);
+
+        GameController.Instance.AddEvent("BreadGuyEducated");
     }
 }

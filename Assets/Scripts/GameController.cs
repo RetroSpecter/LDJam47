@@ -10,6 +10,9 @@ public class GameController : MonoBehaviour {
     public Dictionary<int, Area> areas;
     public HashSet<string> events;
 
+    public Rocket rocket;
+    public int partsCollected;
+
     // Start is called before the first frame update
     void Awake() {
         if (Instance == null) {
@@ -40,5 +43,10 @@ public class GameController : MonoBehaviour {
 
     public bool CheckForEvent(string e) {
         return events.Contains(e);
+    }
+
+    public void CollectedPart(RocketPart part) {
+        this.partsCollected++;
+        this.rocket.CollectPart(part);
     }
 }
