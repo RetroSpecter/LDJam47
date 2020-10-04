@@ -29,6 +29,11 @@ public class Bush : Interactable
     //  lead to interaction
     public override void Interact()
     {
+        if (duck == null) {
+            shakeBush.Invoke();
+            this.transform.DOShakePosition(0.5f, 0.5f, 50);
+            return;
+        } 
         interactNumber++;
 
         if (interactMaxNumber == interactNumber) {

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6372,7 +6372,7 @@ Transform:
   - {fileID: 2046930512}
   - {fileID: 401414900}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -92.188}
 --- !u!1 &309835457
 GameObject:
@@ -11831,7 +11831,7 @@ Transform:
   - {fileID: 39298324}
   - {fileID: 62453451}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455412726
 GameObject:
@@ -12102,7 +12102,7 @@ Transform:
   - {fileID: 617290007}
   - {fileID: 1328698570}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -173.68301}
 --- !u!1 &527594624
 GameObject:
@@ -14371,7 +14371,7 @@ Transform:
   - {fileID: 1501937373}
   - {fileID: 986062236}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &902920529 stripped
 Transform:
@@ -20243,6 +20243,8 @@ MonoBehaviour:
   currArea: 0
   rocket: {fileID: 1501937376}
   partsCollected: 0
+  titleScreen: {fileID: 0}
+  rocketQuest: {fileID: 0}
 --- !u!4 &1289694680
 Transform:
   m_ObjectHideFlags: 0
@@ -20948,6 +20950,7 @@ MonoBehaviour:
   - {fileID: 1727606024}
   - {fileID: 1760061872}
   - {fileID: 204230640}
+  vCam: {fileID: 0}
 --- !u!50 &1501937377
 Rigidbody2D:
   serializedVersion: 4
@@ -21526,7 +21529,7 @@ Transform:
   - {fileID: 105503173}
   - {fileID: 2075351981}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 39.643}
 --- !u!1 &1605579457
 GameObject:
@@ -23553,7 +23556,7 @@ Transform:
   - {fileID: 1080117019}
   - {fileID: 388988552}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -125.29001}
 --- !u!1001 &2093388549
 PrefabInstance:
