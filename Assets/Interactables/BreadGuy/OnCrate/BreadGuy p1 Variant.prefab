@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &192741071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192741072}
+  m_Layer: 0
+  m_Name: Bread Thinking Bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &192741072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192741071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8264547094262110193}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2079752651302295741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,7 +43,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableID: BreadGuyOnCrate
+  gotBread: 0
   breadGuyOutsideGate: {fileID: 0}
+--- !u!114 &1118466300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264547094262110189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a674186810822a547868e8d758f56379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4607291595194274178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,20 +64,106 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 274392035958657501, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 274392035958657501, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc65a5537d3476e4f8b40585997eb0f2,
+        type: 3}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.504717
+      objectReference: {fileID: 0}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.973605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162292750647161069, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373164, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373164, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d098eeeb3ce52f745adcfe3aa1d5bdfd, type: 2}
+    - target: {fileID: 5566997249915373164, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373164, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373164, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.20784315
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373164, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.68235296
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373166, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.067266434
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373166, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.9306284
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373166, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.0780182
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566997249915373166, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.9829795
+      objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373167, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_Name
-      value: BreadGuy p1 Variant
+      value: BreadGuyOnCrate
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.42
+      value: 24.69
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.96
+      value: -6.45
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
@@ -44,22 +173,22 @@ PrefabInstance:
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.60018855
+      value: -0.7914407
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.79985857
+      value: 0.611246
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
@@ -86,6 +215,12 @@ PrefabInstance:
 --- !u!1 &8264547094262110189 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5566997249915373167, guid: 2c207d10b3d9f43b09e4361ae890569e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4607291595194274178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8264547094262110193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
     type: 3}
   m_PrefabInstance: {fileID: 4607291595194274178}
   m_PrefabAsset: {fileID: 0}
