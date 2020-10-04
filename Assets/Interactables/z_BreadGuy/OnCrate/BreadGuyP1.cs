@@ -8,6 +8,9 @@ public class BreadGuyP1 : Interactable {
     public GameObject breadGuyOutsideGate;
     public GameObject Teacher;
 
+    public Collider2D rocketCollider;
+    public SpriteRenderer rocketSprite;
+
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
     protected override bool CanInteract() {
@@ -30,6 +33,15 @@ public class BreadGuyP1 : Interactable {
     protected override void QuestResults() {
         MoveAreasEvent(new GameObject[] { this.breadGuyOutsideGate });
         GameController.Instance.AddEvent("BreadGuyFed");
+
+        var currArea = GameController.Instance.GetCurrArea();
+        var nextArea = GameController.Instance.GetArea(currArea.areaNum + 1);
+
+        nextArea.AddToEnteringQueue(() => {
+            rocketCollider.enabled = true;
+            rocketSprite.sortingLayerName = "Interactables";
+            rocketSprite.sortingOrder = 3;
+        });
     }
 
 }

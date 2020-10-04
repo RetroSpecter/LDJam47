@@ -31,6 +31,10 @@ public class GameController : MonoBehaviour {
         this.areas[num] = area;
     }
 
+    public Area GetArea(int area) {
+        return areas[area];
+    }
+
     public Area GetCurrArea() {
         return Instance.areas[Instance.currArea];
     }
