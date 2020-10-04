@@ -26,7 +26,7 @@ public class Sally : Interactable
     {
         if (Player.IsHolding("Cat")) {
             TakeItemFromPlayer();
-            gotCat = false;
+            gotCat = true;
             catAppear.SetActive(true);
             StartCoroutine(this.CompleteQuest());
         }

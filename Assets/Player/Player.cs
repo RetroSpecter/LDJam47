@@ -34,13 +34,22 @@ public class Player : MonoBehaviour {
 
     public GameObject concentratingUI;
 
-    void Start() {
+    private void Awake()
+    {
         Instance = this;
+    }
+
+    void Start() {
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJump = Mathf.Abs(gravity) * timeToJumpApex;
         animator = GetComponentInChildren<SpriteAnimator>();
         concentratingUI.SetActive(false);
+    }
+
+    public void TogglePlayerMovement(bool on) {
+        canMove = on;
+        velocity.x = 0;
     }
 
     void Update() {
@@ -51,21 +60,25 @@ public class Player : MonoBehaviour {
         {
             jumpAndHover();
             movement(input);
+
+            // Check interaction
+            if (Input.GetKeyDown(interact))
+            {
+                if (this.objectOfConcentration != null)
+                {
+                    this.objectOfConcentration.Interact();
+                }
+                else if (heldItem != null)
+                {
+                    Item item = this.RemoveItem();
+                    item.transform.position = this.transform.position;
+                }
+            }
         }
 
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
-        // Check interaction
-        if (Input.GetKeyDown(interact)) {
-            if (this.objectOfConcentration != null) {
-                this.objectOfConcentration.Interact();
-            } else if (heldItem != null) {
-                Item item = this.RemoveItem();
-                item.transform.position = this.transform.position;
-            }
-        }
     }
 
     void checkIfGrounded() {

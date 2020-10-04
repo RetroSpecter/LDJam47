@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class Bush : Interactable
 {
@@ -33,9 +34,20 @@ public class Bush : Interactable
         if (interactMaxNumber == interactNumber) {
             Player.Instance.StopConcentrating(this);
             duckPopOut.Invoke();
-            duck.gameObject.SetActive(true);
+
+            Sequence s = DOTween.Sequence();
+            s.AppendCallback(() => {
+                Player.Instance.TogglePlayerMovement(false);
+                duck.gameObject.SetActive(true);
+            });
+            s.Append(duck.transform.DOMove(duck.transform.position + duck.transform.up, 0));
+            s.Append(duck.transform.DOMove(duck.transform.position - duck.transform.up, 1).SetEase(Ease.OutBounce));
+            s.AppendCallback(() => {
+                Player.Instance.TogglePlayerMovement(true);
+            });
         } else {
             shakeBush.Invoke();
+            this.transform.DOShakePosition(0.5f, 0.5f, 50);
         }
     }
 }

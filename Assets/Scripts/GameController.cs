@@ -13,6 +13,10 @@ public class GameController : MonoBehaviour {
     public Rocket rocket;
     public int partsCollected;
 
+    [Space()]
+    public GameObject titleScreen;
+    public GameObject rocketQuest;
+
     // Start is called before the first frame update
     void Awake() {
         if (Instance == null) {
@@ -32,6 +36,11 @@ public class GameController : MonoBehaviour {
     }
 
     public void ProgressToNextArea() {
+        if(areas.Count == 2)
+            titleScreen.SetActive(false);
+
+        rocketQuest.SetActive(true);
+
         this.GetCurrArea().PlayerLeft();
         this.currArea = (this.currArea % areas.Count) + 1;
         this.GetCurrArea().PlayerEntered();

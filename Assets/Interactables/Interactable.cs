@@ -71,7 +71,7 @@ public class Interactable : MonoBehaviour {
         // TODO: Yay animation
         // TODO: Quest complete sound
         yield return null;
-
+        ui?.HideAll();
         QuestResults();
     }
 
