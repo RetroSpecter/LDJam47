@@ -37,10 +37,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 171471724798868127, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 584aef4227ee1624bbaaa66035af2e0c,
+        type: 3}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.19215685
+      objectReference: {fileID: 0}
+    - target: {fileID: 686971970843956595, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.65454054
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520332793961366186, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -68751727340038015, guid: a22e7acef36124248938fedcdb620883,
+        type: 3}
+    - target: {fileID: 2520332793961366186, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520332793961366186, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.90752274
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520332793961366186, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.45882356
+      objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373167, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_Name
-      value: Teacher
+      value: Teacher Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}

@@ -32,12 +32,15 @@ public class Player : MonoBehaviour {
     public Transform headPosition;
     private Item heldItem;
 
+    public GameObject concentratingUI;
+
     void Start() {
         Instance = this;
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJump = Mathf.Abs(gravity) * timeToJumpApex;
         animator = GetComponentInChildren<SpriteAnimator>();
+        concentratingUI.SetActive(false);
     }
 
     void Update() {
@@ -125,6 +128,7 @@ public class Player : MonoBehaviour {
     public void Concentrate(Interactable obj) {
         if (this.objectOfConcentration == null) {
             this.objectOfConcentration = obj;
+            concentratingUI.SetActive(true);
         }
     }
 
@@ -133,7 +137,9 @@ public class Player : MonoBehaviour {
         if (this.objectOfConcentration != null
             && this.objectOfConcentration.interactableID == obj.interactableID) {
             this.objectOfConcentration = null;
+            concentratingUI.SetActive(false);
         }
+
     }
 
 
@@ -171,7 +177,7 @@ public class Player : MonoBehaviour {
 
         var item = this.heldItem;
         this.heldItem = null;
-
+        item.dropItem();
         return item;
     }
 }

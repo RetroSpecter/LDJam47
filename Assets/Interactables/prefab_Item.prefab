@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1459562574109069002}
   - component: {fileID: 3011602860452083017}
   m_Layer: 0
-  m_Name: Item
+  m_Name: prefab_Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableID: TestItem
+  ui: {fileID: 0}
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  itemAppearEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1459562574109069001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,8 +232,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1719784289
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 6099581493293703690, guid: a22e7acef36124248938fedcdb620883,
     type: 3}

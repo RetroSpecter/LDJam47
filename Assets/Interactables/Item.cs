@@ -18,6 +18,10 @@ public class Item : Interactable {
         Player.Instance.PickUpItem(this);
     }
 
+    public virtual void dropItem() {
+
+    }
+
     public void ItemAppear() {
         // TODO: add juice
         itemAppearEvent.Invoke();
