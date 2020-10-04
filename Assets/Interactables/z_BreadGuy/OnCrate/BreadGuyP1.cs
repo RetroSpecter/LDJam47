@@ -6,6 +6,7 @@ public class BreadGuyP1 : Interactable {
 
     public bool gotBread;
     public GameObject breadGuyOutsideGate;
+    public GameObject Teacher;
 
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
@@ -22,13 +23,13 @@ public class BreadGuyP1 : Interactable {
             TakeItemFromPlayer();
             gotBread = true;
             StartCoroutine(this.CompleteQuest());
-
         }
     }
 
     // When breadman gets bread, he goes to the school gate.
     protected override void QuestResults() {
-        MoveAreasEvent(this.breadGuyOutsideGate);
+        MoveAreasEvent(new GameObject[] { this.breadGuyOutsideGate });
+
     }
 
 }
