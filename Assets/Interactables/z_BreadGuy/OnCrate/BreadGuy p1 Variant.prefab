@@ -30,6 +30,18 @@ Transform:
   m_Father: {fileID: 8264547094262110193}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1118466300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264547094262110189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a674186810822a547868e8d758f56379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2079752651302295741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,20 +55,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableID: BreadGuyOnCrate
+  ui: {fileID: 7969279774165749895}
   gotBread: 0
   breadGuyOutsideGate: {fileID: 0}
---- !u!114 &1118466300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264547094262110189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a674186810822a547868e8d758f56379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Teacher: {fileID: 0}
 --- !u!1001 &4607291595194274178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,10 +97,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.973605
       objectReference: {fileID: 0}
+    - target: {fileID: 2520332793961366186, guid: 2c207d10b3d9f43b09e4361ae890569e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6761164967045977113, guid: a22e7acef36124248938fedcdb620883,
+        type: 3}
     - target: {fileID: 5162292750647161069, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373164, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
@@ -153,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 5566997249915373167, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
       propertyPath: m_Name
-      value: BreadGuyOnCrate
+      value: BreadGuy p1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5566997249915373171, guid: 2c207d10b3d9f43b09e4361ae890569e,
         type: 3}
@@ -224,3 +232,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4607291595194274178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7969279774165749895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5866205630928797957, guid: 2c207d10b3d9f43b09e4361ae890569e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4607291595194274178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0676f8820ee9b9b468fc96a7309ecbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour {
 
     public string interactableID;
+    public NpcUi ui;
 
     // Start is called before the first frame update
     protected virtual void Start() {
@@ -15,8 +16,12 @@ public class Interactable : MonoBehaviour {
     protected void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             // Register that the player is concentrating on *this* Interactable
-            if (this.CanInteract()) {
+            if (this.CanInteract())
+            {
                 Player.Instance.Concentrate(this);
+                ui?.showDesire();
+            } else {
+                ui?.showStatus();
             }
         }
     }
@@ -25,6 +30,7 @@ public class Interactable : MonoBehaviour {
         if (collision.CompareTag("Player")) {
             // Register that the player is no longer concentrating on *this* Interactable
             Player.Instance.StopConcentrating(this);
+            ui?.HideAll();
         }
     }
 
@@ -59,7 +65,7 @@ public class Interactable : MonoBehaviour {
     //  we want and time the appearance of the bread so any sounds don't overlap.
     //  this way we can be sure things happen in a good order. And so we can
     //  potentially lock the player's movement for a brief amount of time
-    protected IEnumerator CompleteQuest() {
+    protected virtual IEnumerator CompleteQuest() {
         // TODO: Lock player movement for a moment?
         Player.Instance.StopConcentrating(this);
         // TODO: Yay animation
