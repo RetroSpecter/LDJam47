@@ -16,13 +16,21 @@ public class WiggleShaderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
-        mat = rend.sharedMaterial;
+        if (Application.isPlaying)
+        {
+            rend = GetComponent<SpriteRenderer>();
+            mat = rend.material;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!Application.isPlaying) {
+            rend = GetComponent<SpriteRenderer>();
+            mat = rend.sharedMaterial;
+        }
+
         mat.SetFloat("_WiggleRate", wiggleRate);
         mat.SetFloat("_WiggleAmp", wiggleAmp);
         mat.SetFloat("_WiggleScale", wiggleScale);
