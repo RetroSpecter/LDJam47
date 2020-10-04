@@ -16,7 +16,7 @@ public class FishingPond : Interactable {
     protected override bool CanInteract() {
         if (!GameController.Instance.CheckForEvent("BreadGuyFed")) {
             return !retreivedCoin;
-        } else if (!GameController.Instance.CheckForEvent("BreadGuyEducated")) {
+        } else if (!GameController.Instance.CheckForEvent("BreadGuyInSchool")) {
             return !retreivedKey;
         } else {
             return !retreivedPart;

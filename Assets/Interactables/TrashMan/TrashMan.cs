@@ -19,6 +19,7 @@ public class TrashMan : Interactable
             bag.SetActive(false);
         }
         part.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
     // Based on the state of the game & the player's inventory, checks if the
