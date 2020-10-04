@@ -50,6 +50,10 @@ public class Interactable : MonoBehaviour {
         i.gameObject.SetActive(false);
     }
 
+    protected void Sigh() {
+        // TODO: Juice
+    }
+
     // Why make a quest complete method AND a quest result method?
     // Well. The quest complete is an enumerator so we can script any kind of animation
     //  we want and time the appearance of the bread so any sounds don't overlap.
@@ -81,6 +85,11 @@ public class Interactable : MonoBehaviour {
     //  is the current area
     public void MoveAreasEvent(GameObject objectInDifferentArea) {
         this.MoveAreasEvent(new GameObject[] { objectInDifferentArea }, GameController.Instance.GetCurrArea());
+    }
+
+    
+    public void MoveAreasEvent(GameObject[] objectsInDifferentArea) {
+        this.MoveAreasEvent(objectsInDifferentArea, GameController.Instance.GetCurrArea());
     }
 
     // Called when an event occurrs that results in this NPC "moving" from one scene to another
