@@ -16,6 +16,7 @@ public class DunkmanNPC : Interactable
         distFromCenter = transform.position.magnitude;
         fallenBasketball.SetActive(false);
         holdingBasketball.SetActive(true);
+        GameController.Instance.RegisterQuest(this.interactableID);
     }
 
 
@@ -50,5 +51,10 @@ public class DunkmanNPC : Interactable
     {
         //TODO: pick up item
         this.enabled = false;
+    }
+
+    // When breadman gets bread, he goes to the school gate.
+    protected override void QuestResults() {
+        GameController.Instance.CompleteQuest(this.interactableID);
     }
 }
