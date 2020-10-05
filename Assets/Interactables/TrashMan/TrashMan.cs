@@ -20,6 +20,8 @@ public class TrashMan : Interactable
         }
         part.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
+
+        GameController.Instance.RegisterQuest(this.interactableID);
     }
 
     // Based on the state of the game & the player's inventory, checks if the
@@ -54,5 +56,10 @@ public class TrashMan : Interactable
             }
 
         }
+    }
+
+    // When breadman gets bread, he goes to the school gate.
+    protected override void QuestResults() {
+        GameController.Instance.CompleteQuest(this.interactableID);
     }
 }

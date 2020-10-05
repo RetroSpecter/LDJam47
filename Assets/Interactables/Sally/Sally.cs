@@ -10,6 +10,7 @@ public class Sally : Interactable
     private void Start()
     {
         catAppear.SetActive(false);
+        GameController.Instance.RegisterQuest(this.interactableID);
     }
 
     // Based on the state of the game & the player's inventory, checks if the
@@ -30,6 +31,11 @@ public class Sally : Interactable
             catAppear.SetActive(true);
             StartCoroutine(this.CompleteQuest());
         }
+    }
+
+    // When breadman gets bread, he goes to the school gate.
+    protected override void QuestResults() {
+        GameController.Instance.CompleteQuest(this.interactableID);
     }
 
 }

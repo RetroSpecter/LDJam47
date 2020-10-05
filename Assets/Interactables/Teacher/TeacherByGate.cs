@@ -15,6 +15,10 @@ public class TeacherByGate : Interactable {
     public GameObject gate;
     public GameObject student;
 
+    protected override void Start() {
+        GameController.Instance.RegisterQuest(this.interactableID);
+    }
+
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
     protected override bool CanInteract() {
@@ -70,5 +74,7 @@ public class TeacherByGate : Interactable {
                 GameController.Instance.AddEvent("BreadGuyGraduated");
             });
         });
+
+        GameController.Instance.CompleteQuest(this.interactableID);
     }
 }

@@ -11,6 +11,12 @@ public class BreadGuyP1 : Interactable {
     public Collider2D rocketCollider;
     public SpriteRenderer rocketSprite;
 
+
+    protected override void Start() {
+        GameController.Instance.RegisterQuest(this.interactableID);
+    }
+
+
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
     protected override bool CanInteract() {
@@ -42,6 +48,8 @@ public class BreadGuyP1 : Interactable {
             rocketSprite.sortingLayerName = "Interactables";
             rocketSprite.sortingOrder = 3;
         });
+
+        GameController.Instance.CompleteQuest(this.interactableID);
     }
 
 }

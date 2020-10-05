@@ -12,6 +12,7 @@ public class MamaDuck : Interactable
         foreach (GameObject duck in ducks) {
             duck.SetActive(false);
         }
+        GameController.Instance.RegisterQuest(this.interactableID);
     }
 
     // Based on the state of the game & the player's inventory, checks if the
@@ -60,7 +61,7 @@ public class MamaDuck : Interactable
         }
     }
 
-    protected  override IEnumerator CompleteQuest()
+    protected override IEnumerator CompleteQuest()
     {
         // TODO: Lock player movement for a moment?
         Player.Instance.StopConcentrating(this);
@@ -73,8 +74,7 @@ public class MamaDuck : Interactable
     }
 
     // When breadman gets bread, he goes to the school gate.
-    protected override void QuestResults()
-    {
-        //MoveAreasEvent(this.breadGuyOutsideGate);
+    protected override void QuestResults() {
+        GameController.Instance.CompleteQuest(this.interactableID);
     }
 }

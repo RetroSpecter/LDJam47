@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GameController : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class GameController : MonoBehaviour {
     public int currArea;
     public Dictionary<int, Area> areas;
     public HashSet<string> events;
+    public Dictionary<string, bool> completedQuests;
 
     public Rocket rocket;
     public int partsCollected;
@@ -24,8 +26,29 @@ public class GameController : MonoBehaviour {
             this.currArea = 1;
             this.areas = new Dictionary<int, Area>();
             this.events = new HashSet<string>();
+            this.completedQuests = new Dictionary<string, bool>();
         }
+
+        
     }
+
+    public void RegisterQuest(string questName) {
+        this.completedQuests.Add(questName, false);
+    }
+
+    public void CompleteQuest(string questName) {
+        this.completedQuests[questName] = true;
+    }
+
+    public bool AllQuestsCompleted() {
+        return this.completedQuests.Count(pair => {
+            return pair.Value;
+        }) == this.completedQuests.Count();
+    }
+
+
+    // Area methods
+    ////////////////
 
     public void RegisterArea(int num, Area area) {
         this.areas[num] = area;
