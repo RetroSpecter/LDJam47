@@ -109,7 +109,7 @@ public class Player : MonoBehaviour {
         float targetSpeed =  moveSpeed;
 
         if (Input.GetKey(KeyCode.Tab)) {
-            targetSpeed *= 3;
+            targetSpeed *= 2;
         }
 
         float targetVelocityX = input.x * targetSpeed;

@@ -16,7 +16,12 @@ public class Boundary : MonoBehaviour {
             // State stuff to enter the next area
             GameController.Instance.ProgressToNextArea();
 
-            Player.Instance.transform.position += this.transform.right * 1.5f;
+
+           //else {
+                Player.Instance.transform.position += this.transform.right * 2;
+            //}
+
+
         }
     }
 }
