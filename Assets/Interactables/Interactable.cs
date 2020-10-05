@@ -72,12 +72,15 @@ public class Interactable : MonoBehaviour {
         // TODO: Quest complete sound
         yield return null;
         ui?.HideAll();
+        ui.showStatus();
         QuestResults();
+        AudioManager.instance.Play("QuestComplete");
     }
 
     // Different things happen when NPC's 
     protected virtual void QuestResults() {
         // Nothing
+
     }
 
     /// Events

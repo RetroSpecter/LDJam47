@@ -15,6 +15,7 @@ public class TitleAndOpening : MonoBehaviour
     {
         crashedRocket.SetActive(false);
         Player.Instance.gameObject.SetActive(false);
+        crashingRocket.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,11 +23,15 @@ public class TitleAndOpening : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z) && !inGame) {
             PlayOpeningSequence();
+            inGame = true;
         }
     }
 
     void PlayOpeningSequence() {
         Sequence s = DOTween.Sequence();
+        s.AppendCallback(() => {
+            crashingRocket.SetActive(true);
+        });
         s.Append(crashingRocket.transform.DOMoveY(vCam.transform.position.y,1)).SetEase(Ease.Linear);
         s.Append(vCam.transform.DOMoveY(vCamTargetPosition.transform.position.y, 1.5f)).SetEase(Ease.Linear);
         s.Join(crashingRocket.transform.DOMoveY(vCamTargetPosition.transform.position.y - 3, 1.5f)).SetEase(Ease.Linear);

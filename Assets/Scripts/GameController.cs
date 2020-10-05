@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void ProgressToNextArea() {
-        if(areas.Count == 2)
+        if(this.currArea == 2)
             titleScreen.SetActive(false);
 
         rocketQuest.SetActive(true);
