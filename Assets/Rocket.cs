@@ -9,6 +9,9 @@ public class Rocket : Interactable
     private int collectedPieces;
     public GameObject vCam;
 
+    public GameObject outline;
+
+
     private void Start() {
         //GameController.Instance.AddEvent(rocketReadyEvent);
     }
@@ -26,6 +29,7 @@ public class Rocket : Interactable
             s.Append(transform.GetChild(0).transform.DOShakePosition(20, 0.1f));
             s.Join(this.transform.DOMove(transform.position + transform.up * 30, 5).SetEase(Ease.InQuint));
             s.Join(vCam.transform.DOMove(vCam.transform.position + vCam.transform.up * 20, 8).SetEase(Ease.InOutQuint));
+            outline.SetActive(false);
         }
     }
 
