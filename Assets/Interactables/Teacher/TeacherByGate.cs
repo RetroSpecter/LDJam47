@@ -68,7 +68,7 @@ public class TeacherByGate : Interactable {
         //  a full loop (and enter area 1 again) before graduated bread guy will
         //  appear
         crashSite.AddToEnteringQueue(() => {
-            crashSite.AddToEnteringQueue(() => {
+            GameController.Instance.GetArea(8).AddToEnteringQueue(() => {
                 this.gameObject.SetActive(true);
                 graduatedBreadGuy.SetActive(true);
                 GameController.Instance.AddEvent("BreadGuyGraduated");

@@ -20,7 +20,8 @@ public class RocketPart : Item {
     // Makes collecting a part special
     private IEnumerator CelebratePartCollected() {
         this.collected = true;
-        // TODO: Lock movement?
+
+        Player.Instance.TogglePlayerMovement(false);
 
         // Hold part above your head
         yield return new WaitForSeconds(celebrateTime);
@@ -28,9 +29,9 @@ public class RocketPart : Item {
         // This could be a bug if the player picks up another item before the celebrate time is up
         // If we decide to not lock player movement, we will want to add a check here for the case the
         //  player is no longer holding this rocketPart
-        Player.Instance.RemoveItem();
+        Player.Instance.RemoveItem(false);
         GameController.Instance.CollectedPart(this);
 
-        // TODO: unlock movement?
+        Player.Instance.TogglePlayerMovement(true);
     }
 }

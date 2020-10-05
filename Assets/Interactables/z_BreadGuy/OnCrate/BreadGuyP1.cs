@@ -6,7 +6,7 @@ public class BreadGuyP1 : Interactable {
 
     public bool gotBread;
     public GameObject breadGuyOutsideGate;
-    public GameObject Teacher;
+    public GameObject teacher;
 
     public Collider2D rocketCollider;
     public SpriteRenderer rocketSprite;
@@ -27,7 +27,7 @@ public class BreadGuyP1 : Interactable {
     //  lead to interaction
     public override void Interact() {
         if (!Player.IsHolding("Bread")) {
-            // TODO: sigh
+            Sigh();
         } else {
             TakeItemFromPlayer();
             gotBread = true;
@@ -37,7 +37,7 @@ public class BreadGuyP1 : Interactable {
 
     // When breadman gets bread, he goes to the school gate.
     protected override void QuestResults() {
-        MoveAreasEvent(new GameObject[] { this.breadGuyOutsideGate });
+        MoveAreasEvent(new GameObject[] { this.breadGuyOutsideGate, this.teacher });
         GameController.Instance.AddEvent("BreadGuyFed");
 
         var currArea = GameController.Instance.GetCurrArea();

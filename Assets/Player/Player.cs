@@ -68,9 +68,13 @@ public class Player : MonoBehaviour {
                 {
                     this.objectOfConcentration.Interact();
                 }
-                else if (heldItem != null)
-                {
-                    Item item = this.RemoveItem();
+                else if (heldItem != null) {
+                    // Had to add customer logic
+                    Item item;
+                    if (this.heldItem.interactableID.Contains("Duck"))
+                        item = this.RemoveItem(false);
+                    else
+                        item = this.RemoveItem();
                     item.transform.position = this.transform.position;
                 }
             }
@@ -160,13 +164,14 @@ public class Player : MonoBehaviour {
     // Item Management
 
     // Pick up an item. If you already have an item, replace it
-    public void PickUpItem(Item item) {
+    public void PickUpItem(Item item, bool playSound = true) {
         if (this.heldItem != null) {
             // Remove item from head and place it on the ground. Also concentrate on it.
             this.Concentrate(this.heldItem);
             this.RemoveItem().transform.position = item.transform.position;
         }
-        AudioManager.instance.Play("PickUp");
+        if (playSound)
+            AudioManager.instance.Play("PickUp");
         this.heldItem = item;
         this.heldItem.transform.position = this.headPosition.position;
         this.heldItem.transform.SetParent(this.headPosition);
@@ -186,9 +191,10 @@ public class Player : MonoBehaviour {
     }
 
     // removes the item from your head and returns it
-    public Item RemoveItem() {
+    public Item RemoveItem(bool playSound = true) {
         this.heldItem.transform.SetParent(null);
-        AudioManager.instance.Play("PutDown");
+        if (playSound)
+            AudioManager.instance.Play("PutDown");
         var item = this.heldItem;
         this.heldItem = null;
         item.dropItem();
