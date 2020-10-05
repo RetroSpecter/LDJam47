@@ -29,6 +29,7 @@ public class TreeToShake : Interactable
     //  lead to interaction
     public override void Interact() {
         interactNumber++;
+        AudioManager.instance.Play("Shake");
 
         if (interactMaxNumber-2 == interactNumber) {
             Sequence partsFall = DOTween.Sequence();

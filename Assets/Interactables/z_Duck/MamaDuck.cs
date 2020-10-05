@@ -24,8 +24,9 @@ public class MamaDuck : Interactable
 
     // If the player is concentrating on this interactable, then pressing z will
     //  lead to interaction
-    public override void Interact()
-    {
+    public override void Interact() {
+        AudioManager.instance.Play("Quack");
+
         if (Player.IsHolding("Duck1")) {
             TakeItemFromPlayer();
             ducks[0].SetActive(true);

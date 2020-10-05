@@ -55,6 +55,8 @@ public class TrashMan : Interactable
                 part.gameObject.SetActive(true);
             }
 
+        } else {
+            Sigh();
         }
     }
 

@@ -30,6 +30,8 @@ public class Sally : Interactable
             gotCat = true;
             catAppear.SetActive(true);
             StartCoroutine(this.CompleteQuest());
+        } else {
+            Sigh();
         }
     }
 

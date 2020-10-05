@@ -26,13 +26,7 @@ public class FishingPond : Interactable {
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
     protected override bool CanInteract() {
-        if (!GameController.Instance.CheckForEvent("BreadGuyFed")) {
-            return !retreivedCoin;
-        } else if (!GameController.Instance.CheckForEvent("BreadGuyInSchool")) {
-            return !retreivedKey;
-        } else {
-            return !retreivedPart;
-        }
+        return !retreivedCoin || !retreivedKey || !retreivedPart;
     }
 
     // If the player is concentrating on this interactable, then pressing space will

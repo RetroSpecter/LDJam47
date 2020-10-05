@@ -34,7 +34,6 @@ public class Interactable : MonoBehaviour {
         }
     }
 
-
     // Based on the state of the game & the player's inventory, checks if the
     //  player can interact with this object. Returns if it can or not.
     protected virtual bool CanInteract() {
@@ -51,13 +50,14 @@ public class Interactable : MonoBehaviour {
 
     // Easy call for any quest that takes an item. 
     protected void TakeItemFromPlayer() {
-        Item i = Player.Instance.RemoveItem();
+        Item i = Player.Instance.RemoveItem(false);
         i.transform.parent = this.transform;
         i.gameObject.SetActive(false);
     }
 
     protected void Sigh() {
         // TODO: Juice
+        AudioManager.instance.Play("Sigh");
     }
 
     // Why make a quest complete method AND a quest result method?

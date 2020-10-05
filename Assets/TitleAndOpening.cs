@@ -48,6 +48,7 @@ public class TitleAndOpening : MonoBehaviour
 
         s.AppendCallback(() => {
             Player.Instance.gameObject.SetActive(true);
+            AudioManager.instance.Play("Jump");
         });
     }
 }
