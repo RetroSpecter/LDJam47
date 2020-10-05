@@ -25,6 +25,14 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void Play(AudioSource source, AudioClip sound, float volume = 1, float pitch = 1)
     {
         /* this is adjusting the volume and pitch values of the AudioSource to match the settings we passed in*/
