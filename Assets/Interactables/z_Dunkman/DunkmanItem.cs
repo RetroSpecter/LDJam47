@@ -13,7 +13,6 @@ public class DunkmanItem : Item
 
     public override void Interact()
     {
-        Debug.Log("You picked up an item!");
 
         // Add cool particles for picking up
         interactEvent.Invoke();

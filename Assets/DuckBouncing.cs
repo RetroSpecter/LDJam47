@@ -20,7 +20,6 @@ public class DuckBouncing : MonoBehaviour
     void Update()
     {
         float a = Mathf.Abs(Mathf.Sin(bounceRate * Time.time + random));
-        print(a);
         transform.position = (Vector3)initalPos + transform.up * bounceHeight * a;
     }
 }

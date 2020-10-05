@@ -42,7 +42,7 @@ public class DunkmanNPC : Interactable
         yield return new WaitForSeconds(1);
         transform.DOMove(transform.position.normalized * (distFromCenter - 1), 0.5f).SetEase(Ease.InSine);
         Destroy(GetComponent<DunkmanItem>());
-
+        GameController.Instance.CompleteQuest(this.interactableID);
     }
 
     // If the player is concentrating on this interactable, then pressing z will

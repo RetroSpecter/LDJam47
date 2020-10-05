@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour {
     public GameObject titleScreen;
     public GameObject rocketQuest;
 
+    public GameObject trueEnding;
+    public GameObject normalEnding;
+
     // Start is called before the first frame update
     void Awake() {
         if (Instance == null) {
@@ -33,11 +36,19 @@ public class GameController : MonoBehaviour {
     }
 
     public void RegisterQuest(string questName) {
+
         this.completedQuests.Add(questName, false);
     }
 
     public void CompleteQuest(string questName) {
+
         this.completedQuests[questName] = true;
+        print(GameController.Instance.AllQuestsCompleted());
+        if (GameController.Instance.AllQuestsCompleted())
+        {
+            trueEnding.SetActive(true);
+            normalEnding.SetActive(false);
+        }
     }
 
     public bool AllQuestsCompleted() {
