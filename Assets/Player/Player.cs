@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent (typeof(Controller2D))]
 public class Player : MonoBehaviour {
@@ -148,9 +149,16 @@ public class Player : MonoBehaviour {
 
     // Set another object as the one you want to interact with
     public void Concentrate(Interactable obj) {
+
         if (this.objectOfConcentration == null) {
             this.objectOfConcentration = obj;
             concentratingUI.SetActive(true);
+        } else {
+            if (obj.GetType().IsSubclassOf(typeof(Item)) || obj.GetType() == typeof(Item)) {
+                StopConcentrating(this.objectOfConcentration);
+                this.objectOfConcentration = obj;
+                concentratingUI.SetActive(true);
+            }
         }
     }
 
