@@ -33,6 +33,7 @@ public class DunkmanNPC : Interactable
     //TODO: tweak this so that he always lands on the ground
     IEnumerator dunkEnum() {
         float i = 0;
+        AudioManager.instance.Play("Slam dunk");
         fallenBasketball.SetActive(true);
         holdingBasketball.SetActive(false);
         fallenBasketball.transform.DOMove(fallenBasketball.transform.position - fallenBasketball.transform.up * 6, 1).SetEase(Ease.OutBounce);

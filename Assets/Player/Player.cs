@@ -117,6 +117,7 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") && canJump)
         {
+            AudioManager.instance.Play("Jump", GetComponent<AudioSource>());
             velocity.y = maxJump;
             canJump = false;
         }
@@ -165,7 +166,7 @@ public class Player : MonoBehaviour {
             this.Concentrate(this.heldItem);
             this.RemoveItem().transform.position = item.transform.position;
         }
-
+        AudioManager.instance.Play("PickUp");
         this.heldItem = item;
         this.heldItem.transform.position = this.headPosition.position;
         this.heldItem.transform.SetParent(this.headPosition);
@@ -187,7 +188,7 @@ public class Player : MonoBehaviour {
     // removes the item from your head and returns it
     public Item RemoveItem() {
         this.heldItem.transform.SetParent(null);
-
+        AudioManager.instance.Play("PutDown");
         var item = this.heldItem;
         this.heldItem = null;
         item.dropItem();
