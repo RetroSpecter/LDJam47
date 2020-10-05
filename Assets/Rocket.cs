@@ -25,10 +25,14 @@ public class Rocket : Interactable
 
             Destroy(Player.Instance.gameObject);
             Sequence s = DOTween.Sequence();
+
+            s.AppendCallback(() => { GetComponent<AudioSource>().Play(); });
+            s.Join(transform.GetChild(0).transform.DOShakePosition(1, 0.1f));
             s.AppendInterval(1);
-            s.Append(transform.GetChild(0).transform.DOShakePosition(20, 0.1f));
             s.Join(this.transform.DOMove(transform.position + transform.up * 30, 5).SetEase(Ease.InQuint));
             s.Join(vCam.transform.DOMove(vCam.transform.position + vCam.transform.up * 20, 8).SetEase(Ease.InOutQuint));
+
+            s.AppendCallback(() => { GetComponent<AudioSource>().Stop(); });
             outline.SetActive(false);
         }
     }

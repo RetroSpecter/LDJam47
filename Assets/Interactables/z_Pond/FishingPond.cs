@@ -46,7 +46,9 @@ public class FishingPond : Interactable {
             s.AppendInterval(1);
 
             s.Append(fishingRod.transform.DOMove(fishingRod.transform.position - fishingRod.transform.up * 0.5f, 0.25f));
-
+            s.AppendCallback(() => {
+                AudioManager.instance.Play("Plop");
+            });
 
             s.AppendInterval(3);
 
@@ -54,6 +56,7 @@ public class FishingPond : Interactable {
                 Item.MakeItemAppear(coin);
                 coin.transform.parent = fishingRod.transform;
                 coin.transform.position += coin.transform.up * 1f;
+                AudioManager.instance.Play("Success");
             });
             s.Append(fishingRod.transform.DOMove(fishingRod.transform.position + fishingRod.transform.up * 2f, 0.25f));
 
@@ -65,7 +68,7 @@ public class FishingPond : Interactable {
                 fishingRod.SetActive(false);
                 Player.Instance.TogglePlayerMovement(true);
                 fishingRod.SetActive(false);
-                                fishingRod.transform.position -= fishingRod.transform.up * 1.5f;
+                fishingRod.transform.position -= fishingRod.transform.up * 1.5f;
             });
 
         } else
@@ -81,15 +84,23 @@ public class FishingPond : Interactable {
 
             s.AppendInterval(1);
 
+
             s.Append(fishingRod.transform.DOMove(fishingRod.transform.position - fishingRod.transform.up * 0.5f, 0.25f));
+            s.AppendCallback(() => {
+                AudioManager.instance.Play("Plop");
+            });
 
 
             s.AppendInterval(3);
+            s.AppendCallback(() => {
+                AudioManager.instance.Play("Struggle1");
+            });
             s.Append(fishingRod.transform.DOShakePosition(2, 0.1f, 50));
             s.AppendCallback(() => {
                 Item.MakeItemAppear(schoolKey);
                 schoolKey.transform.parent = fishingRod.transform;
                 //schoolKey.transform.position += schoolKey.transform.up * 1f;
+                AudioManager.instance.Play("Success");
             });
 
             s.Append(fishingRod.transform.DOMove(fishingRod.transform.position + fishingRod.transform.up * 2f, 0.25f));
@@ -103,7 +114,7 @@ public class FishingPond : Interactable {
                 fishingRod.SetActive(false);
                 Player.Instance.TogglePlayerMovement(true);
                 fishingRod.SetActive(false);
-                                fishingRod.transform.position -= fishingRod.transform.up * 1.5f;
+                fishingRod.transform.position -= fishingRod.transform.up * 1.5f;
 
             });
         } else {
@@ -121,16 +132,26 @@ public class FishingPond : Interactable {
             s.AppendInterval(1);
 
             s.Append(fishingRod.transform.DOMove(fishingRod.transform.position - fishingRod.transform.up * 0.5f, 0.25f));
+            s.AppendCallback(() => {
+                AudioManager.instance.Play("Plop");
+            });
 
 
             s.AppendInterval(3);
+            s.AppendCallback(() => {
+                AudioManager.instance.Play("Struggle1");
+            });
             s.Append(fishingRod.transform.DOShakePosition(2, 0.1f, 50));
+            s.AppendCallback(() => {
+                AudioManager.instance.Play("Struggle2");
+            });
             s.Append(fishingRod.transform.DOShakePosition(2, 0.1f, 50));
             s.Join(transform.DOShakePosition(2, 0.1f, 50));
             s.AppendCallback(() => {
                 Item.MakeItemAppear(shipPiece);
                 shipPiece.transform.parent = fishingRod.transform;
                 //shipPiece.transform.position += schoolKey.transform.up * 1f;
+                AudioManager.instance.Play("Success");
             });
 
             s.Append(fishingRod.transform.DOMove(fishingRod.transform.position + fishingRod.transform.up * 2f, 0.25f));
